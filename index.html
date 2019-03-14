@@ -246,148 +246,122 @@
 
 <script>
   var minimalTokenABI = [
-  	{
-  		"constant": true,
-  		"inputs": [
-  			{
-  				"name": "",
-  				"type": "address"
-  			}
-  		],
-  		"name": "balanceOf",
-  		"outputs": [
-  			{
-  				"name": "",
-  				"type": "uint256"
-  			}
-  		],
-  		"payable": false,
-  		"stateMutability": "view",
-  		"type": "function"
-  	},
-  	{
-  		"anonymous": false,
-  		"inputs": [
-  			{
-  				"indexed": true,
-  				"name": "from",
-  				"type": "address"
-  			},
-  			{
-  				"indexed": true,
-  				"name": "to",
-  				"type": "address"
-  			},
-  			{
-  				"indexed": false,
-  				"name": "value",
-  				"type": "uint256"
-  			}
-  		],
-  		"name": "Transfer",
-  		"type": "event"
-  	},
-  ];
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "decimals",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "owner",
+				"type": "address"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "transfer",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+];
 
   var saleABI = [
-  	{
-  		"constant": true,
-  		"inputs": [],
-  		"name": "tokensSold",
-  		"outputs": [
-  			{
-  				"name": "",
-  				"type": "uint256"
-  			}
-  		],
-  		"payable": false,
-  		"stateMutability": "view",
-  		"type": "function"
-  	},
-  	{
-  		"constant": true,
-  		"inputs": [],
-  		"name": "tokenContract",
-  		"outputs": [
-  			{
-  				"name": "",
-  				"type": "address"
-  			}
-  		],
-  		"payable": false,
-  		"stateMutability": "view",
-  		"type": "function"
-  	},
-  	{
-  		"constant": true,
-  		"inputs": [],
-  		"name": "price",
-  		"outputs": [
-  			{
-  				"name": "",
-  				"type": "uint256"
-  			}
-  		],
-  		"payable": false,
-  		"stateMutability": "view",
-  		"type": "function"
-  	},
-  	{
-  		"anonymous": false,
-  		"inputs": [
-  			{
-  				"indexed": false,
-  				"name": "buyer",
-  				"type": "address"
-  			},
-  			{
-  				"indexed": false,
-  				"name": "amount",
-  				"type": "uint256"
-  			}
-  		],
-  		"name": "Sold",
-  		"type": "event"
-  	},
-  	{
-  		"constant": false,
-  		"inputs": [
-  			{
-  				"name": "numberOfTokens",
-  				"type": "uint256"
-  			}
-  		],
-  		"name": "buyTokens",
-  		"outputs": [],
-  		"payable": true,
-  		"stateMutability": "payable",
-  		"type": "function"
-  	},
-  	{
-  		"constant": false,
-  		"inputs": [],
-  		"name": "endSale",
-  		"outputs": [],
-  		"payable": false,
-  		"stateMutability": "nonpayable",
-  		"type": "function"
-  	},
-  	{
-  		"inputs": [
-  			{
-  				"name": "_tokenContract",
-  				"type": "address"
-  			},
-  			{
-  				"name": "_price",
-  				"type": "uint256"
-  			}
-  		],
-  		"payable": false,
-  		"stateMutability": "nonpayable",
-  		"type": "constructor"
-  	}
-  ];
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "decimals",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "owner",
+				"type": "address"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "transfer",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+];
   var saleAddress = '0xF8dF3A6cDF3aE959b3d1FB33a4a49a82E501F23A';
 
   var saleContract = web3.eth.contract(saleABI).at(saleAddress);
